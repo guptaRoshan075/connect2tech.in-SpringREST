@@ -35,8 +35,10 @@
  -->
 		<property name="hbm2ddl.auto">update</property>
 
+		<mapping class="com.c2t.annotation.basic.Employee2" />
 		<mapping class="com.c2t.annotation.basic.Employee" />
 		<!-- <mapping resource="com/c2t/basic/xml/Stock.hbm.xml"></mapping> -->
+		<mapping package=""/>
 
 	</session-factory>
 </hibernate-configuration>

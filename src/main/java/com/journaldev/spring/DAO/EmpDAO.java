@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.c2t.annotation.basic.Employee;
+import com.c2t.annotation.basic.Employee2;
 
 @Repository
 public class EmpDAO implements IEmpDao{
@@ -20,6 +21,7 @@ public class EmpDAO implements IEmpDao{
 		s.beginTransaction();
 		s.save(emp);
 		s.getTransaction().commit();
+		s.close();
 		return emp;
 	}
 	
@@ -37,5 +39,15 @@ public class EmpDAO implements IEmpDao{
 		s.delete(s.get(Employee.class, id));
 		s.getTransaction().commit();
 		return s.createQuery("select e from Employee e").list();
+	}
+
+	@Override
+	public Employee2 setEmp2(Employee2 emp) {
+		Session s = sf.openSession();
+		s.beginTransaction();
+		s.save(emp);
+		s.getTransaction().commit();
+		s.close();
+		return emp;
 	}
 }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.c2t.annotation.basic.Employee;
-
+import com.c2t.annotation.basic.Employee2;
 import com.journaldev.spring.service.IEmpService;
 
 
@@ -31,8 +31,21 @@ public class EmployeeController {
 		emp.setFirstname("Roshan");
 		emp.setCellphone("908765432");
 		emp.setLastname("Gupta");
-		emp.setBirthDate(new Date(2019, 03, 25));
+		emp.setBirthDate(new Date(1019, 03, 25));
 		service.setEmp(emp);
+		
+		return emp;
+	}
+	
+	@RequestMapping(value="/set2" , method = RequestMethod.GET)
+	public @ResponseBody Employee2 setDummyEmployee2() {
+		Employee2 emp = new Employee2();
+		emp.setFirstname("Roshan");
+		emp.setCellphone("908765432");
+		emp.setLastname("Gupta");
+		emp.setBirthDate(new Date(2019, 03, 25));
+		service.setEmp2(emp);
+		
 		return emp;
 	}
 	

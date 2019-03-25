@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 
 import com.c2t.annotation.basic.Employee;
-
+import com.c2t.annotation.basic.Employee2;
 import com.journaldev.spring.DAO.IEmpDao;
 
 
@@ -30,5 +30,10 @@ public class EmpService implements IEmpService{
 	
 	public List<?> removeEmp(Long id){
 		return dao.removeEmp(id);
+	}
+
+	@Override
+	public Employee2 setEmp2(Employee2 emp) {
+		return dao.setEmp2(emp);
 	}
 }
